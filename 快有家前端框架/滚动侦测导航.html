@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>滚动侦测导航</title>
+<style type="text/css">
+*{margin:0;padding:0;list-style:none;text-decoration:none;color:#333;}
+a{display:block;}
+a:hover{color:red;}
+.match{width:1000px;height:50px;font-size:20px;color:#333;text-align:center;margin:auto;background:#fff;/* position:fixed;top:0;left:50%;margin-left:-500px; */}
+.match li{width:198px;height:48px;line-height:48px;border:1px solid #ddd;float:left;}
+.match li.active{background-color:#ddd;}
+.div1{height:400px;background:#aaa;}
+.div2{height:300px;background:#bbb;}
+.div3{height:800px;background:#ccc;}
+.div4{height:500px;background:#ddd;}
+.div5{height:700px;background:#cdcdcd;}
+</style>
+</head>
+<body>
+<div style="height:300px;"></div>
+<div>
+    <ul class="match">
+      <li class="navlist active"><a href="javascript:;">111</a></li>
+      <li class="navlist"><a href="javascript:;">222</a></li>
+      <li class="navlist"><a href="javascript:;">333</a></li>
+      <li class="navlist"><a href="javascript:;">444</a></li>
+      <li class="navlist"><a href="javascript:;">555</a></li>
+    </ul>
+</div>
+<div class="conlist div1">div1</div>
+<div class="conlist div2">div2</div>
+<div class="conlist div3">div3</div>
+<div class="conlist div4">div4</div>
+<div class="conlist div5">div5</div>
+<script type="text/javascript" src="js/demo/kyj.js"></script>
+<script type="text/javascript">
+kyj.scroDetecNav({detecNavList:'navlist',detecConList:'conlist',speed:100,moveEnd:null});
+</script>
+</body>
+</html>

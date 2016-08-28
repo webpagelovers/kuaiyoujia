@@ -1,0 +1,257 @@
+@charset "utf-8";
+/*!
+ * @功能：1、重设浏览器默认样式
+ *        2、设置通用原子类
+ */
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+    background:white;
+}
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    margin:0;
+    padding:0;
+	font:14px 'Microsoft YaHei','simhei',\5b8b\4f53,arial,sans-serif;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body,button,input,select,textarea{
+	font:14px 'Microsoft YaHei','simhei',\5b8b\4f53,arial,sans-serif;
+	color:#333;
+}
+input,select,textarea {
+    font-size:100%;
+}
+/* 去掉 table cell 的边距并让其边重合 */
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+/* ie bug：th 不继承 text-align */
+th {
+    text-align:inherit;
+}
+/* 去除默认边框 */
+fieldset,img {
+    border:none;
+    vertical-align:middle;
+}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+    display:block;
+}
+/* 去掉 firefox 下此元素的边框 */
+abbr,acronym {
+    border:none;
+    font-variant:normal;
+}
+/* 一致的 del 样式 */
+del {
+    text-decoration:line-through;
+}
+address,caption,cite,code,dfn,em,th,var {
+    font-style:normal;
+    font-weight:500;
+}
+/* 去掉列表前的标识，li 会继承 */
+ol,ul {
+    list-style:none;
+}
+li{list-style:none;}
+/* 对齐是排版最重要的因素，别让什么都居中 */
+caption,th {
+    text-align:left;
+}
+/* 来自yahoo，让标题都自定义，适应多个系统应用 */
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+    font-weight:bold;
+}
+q:before,q:after {
+    content:'';
+}
+/* 统一上标和下标 */
+sub,sup {
+    font-size:75%;
+    line-height:0;
+    position:relative;
+    vertical-align:baseline;
+}
+sup {
+    top:-0.5em;
+}
+sub {
+    bottom:-0.25em;
+}
+/* 让链接在 hover 状态下显示下划线 */
+a:hover {
+    /*text-decoration:underline;*/
+}
+/* 默认不显示下划线，保持页面简洁 */
+ins,a,input {
+    text-decoration:none;
+	font-family:'Microsoft YaHei',arial,sans-serif;
+}
+/* 去除 ie6 & ie7 焦点点状线 */
+a:focus,*:focus {
+    outline:none;
+}
+i{font-style:normal;}
+/* 清除浮动 */
+.clearFix:before,.clearFix:after,.clearfix:before,.clearfix:after {
+    content:"";
+    display:block;
+}
+.clearFix:after,.clearfix:after {
+    clear:both;
+    overflow:hidden;
+}
+.clearFix,.clearfix {
+    zoom:1; /* for ie6 & ie7 */
+    /*display: block;*/
+}
+.clear {
+    clear:both;
+    overflow:hidden;
+}
+.clear_both{clear:both;}
+/* 设置显示和隐藏，通常用来与 js 配合 */
+.hide {
+    display:none;
+}
+.block {
+    display:block;
+}
+/* 设置浮动，减少浮动带来的 bug */
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+/* overflow */
+._hide{overflow:hidden;}
+/* border */
+.bd0{border:0;}
+.bd1_c{border:1px solid #ccc;}
+.bd2_c{border:2px solid #ccc;}
+.bd3_c{border:3px solid #ccc;}
+/* background-color */
+.bgn{background:none;}
+.bg0{background-color:#000;}
+.bg1{background-color:#111;}
+.bg2{background-color:#222;}
+.bg3{background-color:#333;}
+.bg4{background-color:#444;}
+.bg5{background-color:#555;}
+.bg6{background-color:#666;}
+.bg7{background-color:#777;}
+.bg8{background-color:#888;}
+.bg9{background-color:#999;}
+.bga{background-color:#aaa;}
+.bgb{background-color:#bbb;}
+.bgc{background-color:#ccc;}
+.bgd{background-color:#ddd;}
+.bge{background-color:#eee;}
+.bgf{background-color:#fff;}
+/* opacity */
+.op0{opacity:0;filter:alpha(opacity = 0)}
+.op50{opacity:0.5;filter:alpha(opacity = 50)}
+.op100{opacity:1;filter:alpha(opacity = 100)}
+/* z-index */
+.-z1{z-index:-1;}
+.z10{z-index:10;}
+.z100{z-index:100;}
+.z1000{z-index:1000;}
+.z10000{z-index:10000;}
+/* position */
+.pos_r{position:relative;}
+.pos_a{position:absolute;}
+.pos_f{position:fixed;}
+.pos_s{position:static;}
+/* text-align */
+.ta_l{text-align:left;}
+.ta_r{text-align:right;}
+.ta_c{text-align:center;}
+/* text-indent */
+.ti_0{text-indent:0;}
+.ti_2{text-indent:2em;}
+.-ti_9999{text-indent:-9999px;}
+/* border-radius */
+.radius2{border-radius:2px;}
+.radius4{border-radius:4px;}
+.radius6{border-radius:6px;}
+.radius8{border-radius:8px;}
+.radius10{border-radius:10px;}
+.radius15{border-radius:15px;}
+.radius20{border-radius:20px;}
+.radius50%{border-radius:50%;}
+/* font-size */
+.font12{font-size:12px;}
+.font14{font-size:14px;}
+.font16{font-size:16px;}
+.font18{font-size:18px;}
+.font20{font-size:20px;}
+/* font-weight */
+.bold{font-weight:bold;}
+.font_b{font-weight:bold;}
+.font_n{font-weight:normal;}
+/* font-color */
+.col000,.col0{color:#000;}
+.col111,.col1{color:#111;}
+.col222,.col2{color:#222;}
+.col333,.col3{color:#333;}
+.col444,.col4{color:#444;}
+.col555,.col5{color:#555;}
+.col666,.col6{color:#666;}
+.col777,.col7{color:#777;}
+.col888,.col8{color:#888;}
+.col999,.col9{color:#999;}
+.colaaa,.cola{color:#aaa;}
+.colbbb,.colb{color:#bbb;}
+.colccc,.colc{color:#ccc;}
+.colddd,.cold{color:#ddd;}
+.coleee,.cole{color:#eee;}
+.colfff,.colf{color:#fff;}
+.colf60{ color:#f60;}
+.colf30{ color:#f30;}
+.colf80{ color:#f80;}
+/* line-height */
+.LH120{line-height:120%;}
+.LH140{line-height:140%;}
+.LH160{line-height:160%;}
+.LH180{line-height:180%;}
+.LH200{line-height:200%;}
+.lh16{line-height:16px;}
+.lh18{line-height:18px;}
+.lh20{line-height:20px;}
+/* margin && padding*/
+.m_auto{margin:0px auto;}
+.m0{margin:0;}
+.mt0{margin-top:0;}
+.mb0{margin-bottom:0;}
+.ml0{margin-left:0;}
+.ml10{ margin-left:10px;}
+.mr0{margin-right:0;}
+.mr6{ margin-right:6px;}
+.mr20{margin-right:20px}
+.mr30{margin-right:30px;}
+.mr40{ margin-right:40px;}
+.mt20{margin-top:20px;}
+.mr30{margin-right:30px;}
+.mt20{margin-top:20px;}
+.p0{padding:0;}
+.pt0{padding-top:0;}
+.pb0{padding-bottom:0;}
+.pl0{padding-left:0;}
+.pr0{padding-right:0;}
+/* width && height*/
+.w0{width:0;}
+.W100{width:100%;}
+.h0{height:0;}
+.H100{height:100%;}
+/* 文字超出显示省略号 */
+.text_hide {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

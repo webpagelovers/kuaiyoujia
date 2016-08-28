@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>快有家前端框架</title>
+<link rel="stylesheet" href="css/demo/no_use.css">
+</head>
+<body>
+<div class="container w980">
+	<h1 class="ta_c">快有家前端框架</h1>
+</div>
+<div class="container w980">
+	<h5 class="title">滚动侦测导航</h5>
+    <div class="code">kyj.scroDetecNav({detecNavList:'navlist',detecConList:'conlist',speed:100,moveEnd:null});</div>
+    <div class="content d">
+        <ul class="content match">
+          <li class="navlist active"><a href="javascript:;">焦点轮播图</a></li>
+          <li class="navlist"><a href="javascript:;">选项卡</a></li>
+          <li class="navlist"><a href="javascript:;">下拉菜单</a></li>
+          <li class="navlist"><a href="javascript:;">仿select</a></li>
+          <li class="navlist"><a href="javascript:;">全选反选</a></li>
+          <li class="navlist"><a href="javascript:;">点击看大图</a></li>
+        </ul>
+    </div>
+	<h5 class="title conlist">焦点轮播图</h5>
+    <div class="code">kyj.focusMap({ID:'div1',focusList:'list',iNow:0,moveTime:500,moveType:'easeIn',autoPlayTime:3000,autoPlay:'true',moveEnd:null});</div>
+    <div class="content">
+    	<div class="div1" id="div1">
+        	<div class="list">1</div>
+        	<div class="list">2</div>
+        	<div class="list">3</div>
+        </div>
+    </div>
+    <div class="code">kyj.fadeIn({ID:'div2',focusList:'list',iNow:0,moveTime:500,moveType:'easeIn',autoPlayTime:3000,autoPlay:'true',moveEnd:null});</div>
+    <div class="content">
+    	<div class="div1" id="div2">
+        	<div  class="list">
+            	<div style="height:100%;background-color:#639;">1</div>
+            </div>
+        	<div  class="list">
+            	<div style="height:100%;background-color:#369;">2</div>
+            </div>
+        	<div  class="list">
+            	<div style="height:100%;background-color:#909;">3</div>
+            </div>
+        </div>
+    </div>
+    
+	<h5 class="title conlist">选项卡</h5>
+    <div class="code">kyj.tab({ID:'div12',events:'click',tabTitleList:'list',tabConList:'con',iNow:0,moveEnd:null});</div>
+    <div class="content">
+    	<div class="div3" id="div12">
+        	<div style="height:32px;">
+                <a href="javascript:;" class="list active">1</a>
+                <a href="javascript:;" class="list">2</a>
+                <a href="javascript:;" class="list">3</a>
+            </div>
+            <div class="con">a</div>
+            <div class="con">b</div>
+            <div class="con">c</div>
+        </div>
+    </div>
+    <div class="code">kyj.tab({ID:'div13',events:'mouseover',tabTitleList:'list',tabConList:'con',iNow:0,moveEnd:null});</div>
+    <div class="content">
+    	<div class="div3" id="div13">
+        	<div style="height:32px;">
+                <a href="javascript:;" class="list active">1</a>
+                <a href="javascript:;" class="list">2</a>
+                <a href="javascript:;" class="list">3</a>
+            </div>
+            <div class="con">a</div>
+            <div class="con">b</div>
+            <div class="con">c</div>
+        </div>
+    </div>
+    
+	<h5 class="title conlist">下拉菜单</h5>
+    <div class="code">kyj.menu({ID:'div14',type:'default',timeSpace:'200',moveTime:500,menuTitle:'a1',menuCon:'ul1',moveEnd:null});</div>
+    <div class="code">kyj.menu({ID:'div15',type:'fade',timeSpace:'200',moveTime:500,menuTitle:'a1',menuCon:'ul1',moveEnd:null});</div>
+    <div class="content" style="height:200px;">
+    	<div class="div3" id="div14" style="width:100px;height:30px;line-height:30px;text-align:center;">
+            <a class="a1" style="display:block;background-color:#ddd;" href="javascript:;">111</a>
+            <ul class="ul1">
+                <li><a href="javascript:;">111</a></li>
+                <li><a href="javascript:;">222</a></li>
+                <li><a href="javascript:;">333</a></li>
+            </ul>
+        </div>
+    	<div class="div3" id="div15" style="position:relative;left:200px;top:-30px;width:100px;height:30px;line-height:30px;text-align:center;">
+            <a class="a1" style="display:block;background-color:#ddd;" href="javascript:;">111</a>
+            <ul class="ul1">
+                <li><a href="javascript:;">111</a></li>
+                <li><a href="javascript:;">222</a></li>
+                <li><a href="javascript:;">333</a></li>
+            </ul>
+        </div>
+    </div>
+    
+	<h5 class="title conlist">仿select</h5>
+    <div class="code">kyj.selected({ID:'div16',type:'default',timeSpace:'200',selectedTitle:'a1',selectedCon:'ul1',moveEnd:null});</div>
+    <div class="code">kyj.selected({ID:'div17',type:'click',timeSpace:'200',selectedTitle:'a1',selectedCon:'ul1',moveEnd:null});</div>
+    <div class="content" style="height:200px;">
+    	<div class="div3" id="div16" style="width:100px;height:30px;line-height:30px;text-align:center;">
+            <a class="a1" style="display:block;background-color:#ddd;" href="javascript:;">111</a>
+            <ul class="ul1">
+                <li><a href="javascript:;">111</a></li>
+                <li><a href="javascript:;">222</a></li>
+                <li><a href="javascript:;">333</a></li>
+            </ul>
+        </div>
+    	<div class="div3" id="div17" style="position:relative;left:200px;top:-30px;width:100px;height:30px;line-height:30px;text-align:center;">
+            <a class="a1" style="display:block;background-color:#ddd;" href="javascript:;">111</a>
+            <ul class="ul1">
+                <li ><a href="javascript:;">111</a></li>
+                <li><a href="javascript:;">222</a></li>
+                <li><a href="javascript:;">333</a></li>
+            </ul>
+        </div>
+    </div>
+    
+	<h5 class="title conlist">全选反选</h5>
+    <div class="code">kyj.selectAll({ID:'div18',selectAll:'a1',selectNo:'a2',selectList:'li01',moveEnd:null});</div>
+    <div class="content" style="height:200px;" id="div18">
+    	<button class="a1">全选</button>&nbsp;&nbsp;&nbsp;&nbsp;<button class="a2">反选</button>
+    	<ul id="ul2">
+    		<li><label><input class="li01" type="checkbox">111</label></li>
+    		<li><label><input class="li01" type="checkbox">111</label></li>
+    		<li><label><input class="li01" type="checkbox">111</label></li>
+    		<li><label><input class="li01" type="checkbox">111</label></li>
+    		<li><label><input class="li01" type="checkbox">111</label></li>
+    		<li><label><input class="li01" type="checkbox">111</label></li>
+    	</ul>
+    </div>
+    
+	<h5 class="title conlist">点击看大图</h5>
+    <div class="code">kyj.showBig({ID:'div19',bigList:'ccc',smallList:'bbb',view:3,spacing:20,moveTime:500,moveType:'easeIn',moveEnd:null});</div>
+    <div class="content" id="div19" style="width:600px;height:364px;margin:auto;">
+        <div style="overflow:hidden;">
+        	<div style="width:1000px;height:100px;">
+                <div class="bbb"><a href="javascript:;"><img width="100" src="images/demo/another.jpg?v=001" alt=""></a></div>
+                <div class="bbb"><a href="javascript:;"><img src="images/demo/another.jpg?v=002" alt=""></a></div>
+                <div class="bbb"><a href="javascript:;"><img src="images/demo/another.jpg?v=003" alt=""></a></div>
+                <div class="bbb"><a href="javascript:;"><img src="images/demo/another.jpg?v=004" alt=""></a></div>
+                <div class="bbb"><a href="javascript:;"><img src="images/demo/another.jpg?v=005" alt=""></a></div>
+                <div class="bbb"><a href="javascript:;"><img src="images/demo/another.jpg?v=006" alt=""></a></div>
+                <div class="bbb"><a href="javascript:;"><img src="images/demo/another.jpg?v=007" alt=""></a></div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-top:1000px;"></div>
+</div>
+<script type="text/javascript" src="js/demo/kyj.js"></script>
+<!-- <script type="text/javascript" src="js/demo/kyj.min.js"></script> -->
+<script type="text/javascript">
+	kyj.focusMap({ID:'div1',focusList:'list',iNow:0,moveTime:500,moveType:'easeIn',autoPlayTime:3000,autoPlay:'true',moveEnd:null});
+	kyj.fadeIn({ID:'div2',focusList:'list',iNow:0,moveTime:500,moveType:'easeIn',autoPlayTime:3000,autoPlay:'true',moveEnd:null});
+	kyj.tab({ID:'div12',events:'click',tabTitleList:'list',tabConList:'con',iNow:0,moveEnd:null});
+	kyj.tab({ID:'div13',events:'mouseover',tabTitleList:'list',tabConList:'con',iNow:0,moveEnd:null});
+	kyj.menu({ID:'div14',type:'default',timeSpace:'200',moveTime:500,menuTitle:'a1',menuCon:'ul1',moveEnd:null});
+	kyj.menu({ID:'div15',type:'fade',timeSpace:'200',moveTime:500,menuTitle:'a1',menuCon:'ul1',moveEnd:null});
+	kyj.selected({ID:'div16',type:'default',timeSpace:'200',selectedTitle:'a1',selectedCon:'ul1',moveEnd:null});
+	kyj.selected({ID:'div17',type:'click',timeSpace:'200',selectedTitle:'a1',selectedCon:'ul1',moveEnd:null});
+	kyj.selectAll({ID:'div18',selectAll:'a1',selectNo:'a2',selectList:'li01',moveEnd:null});
+	kyj.showBig({ID:'div19',bigList:'ccc',smallList:'bbb',view:3,spacing:20,moveTime:500,moveType:'easeIn',moveEnd:null});
+	kyj.scroDetecNav({detecNavList:'navlist',detecConList:'conlist',speed:100,moveEnd:null});
+</script>
+</body>
+</html>

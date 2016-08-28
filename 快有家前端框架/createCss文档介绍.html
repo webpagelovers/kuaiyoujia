@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>文档介绍</title>
+<style type="text/css" id="auto">
+*{margin:0;padding:0;list-style:none;color:#333;font-family:'微软雅黑';}
+</style>
+</head>
+<body>
+<div css="bgc6F5499 font20 pt100 pb100 lh40">
+    <div css="w980 m_auto colFFF">
+        <p css="font80 mb40 colFFF">createCss.js</p>主要是用于创建css样式表。<br>
+        它根据标签的自定义属性css=“css简写...”,解析出对应的css样式，并自动添加到HTML文档的头部样式表里。<br>
+        它的优点主要是减少了对其他css文件样式表的依赖，每个页面都会生成自己独有的css样式表，避免了多余的没用的样式对当前页面的影响。<br>
+        它支持ajax自动获取dom节点，当浏览器dom节点发生改变时，亦不需要引用任何样式，即可完成对新增加的dom节点的css样式的渲染。
+    </div>
+</div><h1 css="w980 h50 lh50 col333 m_auto mt50 thin">需要注意的几点：</h1>
+<ul css="w960 m_auto bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4 mt10">
+	<li css="pos_r pL30 font14 lh24">
+    	<span css="pos_a L0">1.</span>
+       需要给头部的style添加一个<strong>id="auto"</strong>属性
+    </li>
+	<li css="pos_r pL30 font14 lh24">
+    	<span css="pos_a L0">2.</span>
+        如果需要在一个标签上设置样式，则在这个标签上设置自定义属性css="要设置的css简写...",如果要设置hover效果，则需要给当前标签加上自定义属性hover="要设置的css简写..."。
+    </li>
+	<li css="pos_r pL30 font14 lh24">
+    	<span css="pos_a L0">3.</span>
+       目前还没有写入css3的大部分属性。
+    </li>
+</ul>
+<h1 css="w980 h50 lh50 col333 m_auto mt50 thin">简写规则：</h1>
+<ul css="w980 m_auto pb100">
+  <li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">width</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>w100</strong> 解析为 width:100px;<br><strong>w_auto</strong> 解析为 width:auto;</p>
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">height</h5>
+      <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>h100</strong> 解析为 height:100px;<br><strong>h_auto</strong> 解析为 height:auto;<br><strong>lh100</strong> 解析为 line-height:100px;</p>
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">margin</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>m100</strong> 解析为 margin:100px;<br><strong>mL100</strong> 解析为 margin-left:100px;<br><strong>mr100</strong> 解析为 margin-right:100px;<br><strong>mt100</strong> 解析为 margin-top:100px;<br><strong>mb100</strong> 解析为margin-bottom:100px;<br><strong>m_100</strong> 解析为 margin:-100px;<br><strong>mL_100</strong> 解析为 margin-left:-100px;<br><strong>mr_100</strong> 解析为 margin-right:-100px;<br><strong>mt_100</strong> 解析为 margin-top:-100px;<br><strong>mb_100</strong> 解析为margin-bottom:-100px;</p>
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">padding</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>p100</strong> 解析为 padding:100px;<br><strong>pL100</strong> 解析为 padding-left:100px;<br><strong>pr100</strong> 解析为 padding-right:100px;<br><strong>pt100</strong> 解析为 padding-top:100px;<br><strong>pb100</strong> 解析为 padding-bottom:100px;</p>
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">border</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>bd5</strong> 解析为 border:5px solid #000;<br><strong>bdL5</strong> 解析为 border-left:5px solid #000;<br><strong>bdr5</strong> 解析为 border-right:5px solid #000;<br><strong>bdt5</strong> 解析为 border-top:5px solid #000;<br><strong>bdb5</strong> 解析为 border-bottom:5px solid #000;</p>
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">display</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>dis_b</strong> 解析为 display:block;<br><strong>dis_ib</strong> 解析为 display:inline-block;<br><strong>dis_i</strong> 解析为 display:inline;<br><strong>dis_n</strong> 解析为 display:none;</p>
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">position</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>pos_f</strong> 解析为 position:fixed;<br><strong>pos_r</strong> 解析为 position:relative;<br><strong>pos_a</strong> 解析为 position:absolute;<br><strong>pos_s</strong> 解析为 position:static;<br><strong>z100</strong> 解析为 z-index:100;</p>
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">left</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>L100</strong> 解析为 left:100px;<br><strong>L_100</strong> 解析为 left:-100px;<br><strong>LB100</strong> 解析为 left:100%;<br>
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">right</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>r100</strong> 解析为 right:100px;<br><strong>r_100</strong> 解析为 right:-100px;
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">top</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>t100</strong> 解析为 top:100px;<br><strong>t_100</strong> 解析为 top:-100px;<br><strong>TB100</strong> 解析为 top:100%;<br>
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">bottom</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>b100</strong> 解析为 bottom:100px;<br><strong>b_100</strong> 解析为 bottom:-100px;
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">float</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>fl</strong> 解析为 float:left;<br><strong>fr</strong> 解析为 float:right;
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">font-size</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>font100</strong> 解析为 font-size:100px;<br><strong>bold</strong> 解析为 font-weight:bold;<br><strong>thin</strong> 解析为 font-weight:normal;
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">color</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>colFFF</strong> 解析为 color:#FFF; <strong>col000</strong> 解析为 color:#000; <strong>colF0F0F0</strong> 解析为 color:#F0F0F0;<br><strong>bdcFFF</strong> 解析为 border-color:#FFF; <strong>bdc000</strong> 解析为 border-color:#000; <strong>bccF0F0F0</strong> 解析为 border-color:#F0F0F0;<br><strong>bgcFFF</strong> 解析为 background-color:#FFF; <strong>bgc000</strong> 解析为 background-color:#000; <strong>bgcF0F0F0</strong> 解析为 background-color:#F0F0F0;
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">opacity</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>opc10</strong> 解析为 opacity:0.1;filter:alpha(opacity=10);
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">text-align</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>ta_l</strong> 解析为 text-align:left;<br><strong>ta_c</strong> 解析为 text-align:center;<br><strong>ta_r</strong> 解析为 text-align:right;<br><strong>ti1</strong> 解析为 text-indent:1em;<br><strong>ti_1</strong> 解析为 text-indent:-1em;
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">text-decoration</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>td_u</strong> 解析为 text-decoration:underline;<br><strong>td_n</strong> 解析为 text-decoration:none;
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">hide</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4 text_hide"><strong>hide</strong> 解析为 overflow:hidden;<br><strong>over_auto</strong> 解析为 overflow:auto;<br><strong>text_hide</strong> 解析为 overflow: hidden;text-overflow:ellipsis;white-space: nowrap;
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">cursor</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>cur_p</strong> 解析为 cursor:pointer;<br><strong>cur_d</strong> 解析为 cursor:default;
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">border-radius</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>radius10</strong> 解析为 border-radius:10px;
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">transition</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>tra100</strong> 解析为 transition:100ms;
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">square(正方形)</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>s100</strong> 解析为 width:100px;height:100px;
+    </li>
+	<li css="pos_r font14 lh24">
+       <h3 css="font16 lh40 pL10">cricle(圆形)</h5>
+       <p css="bgcF7F7F9 p10 bd1 bdcE1E1E8 radius4"><strong>c100</strong> 解析为 width:100px;height:100px;border-radius:50%;
+    </li>
+</ul>
+<script type="text/javascript" src="js/lib/createCss.min.js"></script>
+</body>
+</html>
